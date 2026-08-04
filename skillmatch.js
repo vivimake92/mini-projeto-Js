@@ -51,10 +51,22 @@ vagas.forEach((vaga) => {
 
     let percentual = (pontos / vaga.listaRequisitos.length) * 100
 
-    console.log("Empresa: " + vaga.empresa)
+    //console.log("Empresa: " + vaga.empresa)
 
-    console.log("Cargo: " + vaga.cargo)
+    //console.log("Cargo: " + vaga.cargo)
 
-    console.log("Compatibilidade: " + percentual + "%")
+    //console.log("Compatibilidade: " + percentual + "%")
 
+
+    if (percentual <= 49) {
+        console.log(`${vaga.empresa}: ${percentual}% - Baixa compatibilidade`)
+    }
+
+    else if (percentual <= 79 && percentual >= 50) {
+        console.log(`${vaga.empresa}: ${percentual}% - Média compatibilidade`)
+    }
+
+    else if (percentual <= 100 && percentual >= 80) {
+        console.log(`${vaga.empresa}: ${percentual}% - Alta compatibilidade`)
+    }
 })
