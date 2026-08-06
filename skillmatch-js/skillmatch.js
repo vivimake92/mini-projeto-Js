@@ -64,32 +64,41 @@ vagas.forEach((vaga) => {
     }
 
     if (percentual <= 49) {
+        console.log("---------------------------")
         console.log(`${vaga.empresa}: ${percentual}% - Baixa compatibilidade`)
     }
 
     else if (percentual <= 79 && percentual >= 50) {
+        console.log("---------------------------")
         console.log(`${vaga.empresa}: ${percentual}% - Média compatibilidade`)
     }
 
     else if (percentual <= 100 && percentual >= 80) {
+        console.log("---------------------------")
         console.log(`${vaga.empresa}: ${percentual}% - Alta compatibilidade`)
     }
 
     console.log("Habilidades que faltam: ")
 
     if (habilidadesFaltantes.length === 0) {
-        console.log("Você possuí todos os requisitos para a vaga!")
+        console.log("Nenhuma! O candidato possuí todos os requisitos para a vaga!")
     } else {
         habilidadesFaltantes.forEach((habilidade) => {
             console.log("- " + habilidade)
         })
     }
+
+    if (percentual < 100) {
+        console.log("Recomendação de estudo:")
+    habilidadesFaltantes.forEach((habilidade) => {
+        console.log("- Estudar: " + habilidade)
+    })}
 })
 
-
+console.log("---------------------------")
 console.log("Vaga mais compatível: " + vagaMaisCompativel.empresa)
 console.log(`${vagaMaisCompativel.cargo} ${maiorCompatibilidade}%`)
-
+console.log("---------------------------")
 
 class NovaVaga {
      constructor(empresa, cargo, listaRequisitos) {
