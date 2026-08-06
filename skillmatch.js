@@ -27,24 +27,25 @@ const vagas = [
 
 console.log(vagas)
 
+let maiorCompatibilidade = 0
+let vagaMaisCompativel = null
 
 vagas.forEach((vaga) => {
     
     let pontos = 0
+    let habilidadesFaltantes = []
 
     vaga.listaRequisitos.forEach((requisito) => {
         
         let habilidadeEncontrada = candidato.habilidades.find((habilidade) => {
         
-            if (habilidade === requisito) {
-                return true
-            } else {
-                return false
-        }    
+            return habilidade === requisito   
         })
 
         if (habilidadeEncontrada) {
             pontos++
+        } else {
+            habilidadesFaltantes.push(requisito)
         }
 
     })
@@ -57,6 +58,10 @@ vagas.forEach((vaga) => {
 
     //console.log("Compatibilidade: " + percentual + "%")
 
+    if (percentual > maiorCompatibilidade) {
+        maiorCompatibilidade = percentual
+        vagaMaisCompativel = vaga
+    }
 
     if (percentual <= 49) {
         console.log(`${vaga.empresa}: ${percentual}% - Baixa compatibilidade`)
@@ -69,7 +74,21 @@ vagas.forEach((vaga) => {
     else if (percentual <= 100 && percentual >= 80) {
         console.log(`${vaga.empresa}: ${percentual}% - Alta compatibilidade`)
     }
+
+    console.log("Habilidades que faltam: ")
+
+    if (habilidadesFaltantes.length === 0) {
+        console.log("Você possuí todos os requisitos para a vaga!")
+    } else {
+        habilidadesFaltantes.forEach((habilidade) => {
+            console.log("- " + habilidade)
+        })
+    }
 })
+
+
+console.log("Vaga mais compatível: " + vagaMaisCompativel.empresa)
+console.log(`${vagaMaisCompativel.cargo} ${maiorCompatibilidade}%`)
 
 
 class NovaVaga {
