@@ -48,6 +48,6 @@ Durante o processo, conforme eu desenvolvia o código, eu ia utilizando o consol
 ## Links
 
 - [KanBan Trello](https://trello.com/b/qdEh937s/meu-primeiro-trello-mini-projeto)
-- [Link do vídeo explicativo]()
+- [Link do vídeo explicativo](https://youtu.be/302Ld2YWzWs)
 - [Lista de pull requests](https://github.com/vivimake92/mini-projeto-Js/pulls?q=is%3Apr+is%3Aclosed)
 - [Lista de Branches](https://github.com/vivimake92/mini-projeto-Js/branches)
